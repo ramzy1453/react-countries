@@ -1,0 +1,14 @@
+.country {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  border: 1px black solid;
+}
+
+.country img {
+  width: 100%;
+  height: 300px;
+}

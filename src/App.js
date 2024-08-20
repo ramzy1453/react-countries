@@ -1,23 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import CountryItem from "./Components/CountryItem";
+import Footer from "./Components/Footer";
+import Navbar from "./Components/Navbar";
+import Search from "./Components/Search";
+
+let countries = [
+  {
+    name: "Portugal",
+    continent: "Europe",
+    flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/1024px-Flag_of_Portugal.svg.png",
+  },
+  {
+    name: "Algeria",
+    continent: "Africa",
+    flag: "https://upload.wikimedia.org/wikipedia/commons/9/90/Flag_of_Algeria.png",
+  },
+  {
+    name: "Japan",
+    continent: "Asia",
+    flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Japan_flag_-_variant.png/1200px-Japan_flag_-_variant.png",
+  },
+];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <main>
+        <Search />
+        <div className="countries-container">
+          {countries.map(function (country) {
+            return (
+              <CountryItem
+                name={country.name}
+                continent={country.continent}
+                flag={country.flag}
+              />
+            );
+          })}
+        </div>
+      </main>
+      <Footer />
     </div>
   );
 }
